@@ -1,6 +1,6 @@
 <?php
 
-namespace Masuresh124\AgreeTerms\Service;
+namespace Masuresh124\AgreeTerms\Services;
 
 class AgreeService
 {
