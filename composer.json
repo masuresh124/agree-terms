@@ -1,0 +1,24 @@
+{
+    "name": "masuresh124/agree-terms",
+    "description": "This package is used agree terms and condition",
+    "license": "MIT",
+    "type": "library",
+    "homepage": "https://github.com/masuresh124/agree-terms",
+    "authors": [
+        {
+            "name": "Suresh Ayyasamy",
+            "email": "masuresh124@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.1.0",
+        "laravel/framework": "~5.2.0||~5.3.0||~5.4.0||~5.5.0||~5.6.0||~5.7.0||~5.8.0||^6.0||^7.0||^8.0||^9.0|^10.0"
+  },
+  "autoload": {
+    "psr-4": {
+        "Masuresh124\\AgreeTerms\\": "src/"
+    }
+},
+"minimum-stability": "dev",
+"prefer-stable": true
+}
