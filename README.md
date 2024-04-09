@@ -9,7 +9,13 @@ Install agree terms component with the composer
 ```bash
  composer require masuresh124/agree-terms
 ```
-
+Add the following code in config\app.php
+```bash
+  /**
+  * Package Service Providers...
+  */
+  Masuresh124\SimpleCrudBuilder\Providers\AgreeTermsProvider::class,
+```
 Run the following command to publish the service provider
 ```bash
   php artisan vendor:publish --provider="Masuresh124\AgreeTerms\Providers\AgreeTermsProvider"
@@ -20,15 +26,9 @@ Run the following command to run the migration
   php artisan migrate
 ```
  
-Add the following code in config\app.php
-```bash
-  /**
-  * Package Service Providers...
-  */
-  Masuresh124\SimpleCrudBuilder\Providers\AgreeTermsProvider::class,
-```
 
-In Model user.php
+
+In `Model\User.php` add the trait 
 ```javascript
  <?php
 namespace App\Models;
@@ -44,10 +44,26 @@ class User extends Authenticatable
    .
 
 }
-
+```
+In `app\Http\Kernel.php` add the following middleware 
+```javascript
+     protected $routeMiddleware = [
+        .
+        .
+        'agree-terms'      => \Masuresh124\AgreeTerms\Http\Middleware\AgreeTermsMiddleware::class,
+    ];
 ```
 
-Go To resources/views/agree-terms/form.blade.php
+In `routes/web.php` add the following middleware for routes
+```javascript
+  Auth::routes();
+
+  Route::middleware(['auth', 'agree-terms'])->group(function () {
+    Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboard');
+});
+```
+
+Go To `resources/views/agree-terms/form.blade.php`
 - Add layout to this page as per the application design
 ```javascript
 @include('agree-terms.terms')
@@ -67,7 +83,7 @@ Go To resources/views/agree-terms/form.blade.php
 </form>
 ```
 
-Go To resources/views/agree-terms/terms.blade.php
+Go To `resources/views/agree-terms/terms.blade.php`
 - Add application terms and conditions content
 ```javascript
 <h2>Please agree to our updated Terms of Service.</h2>
