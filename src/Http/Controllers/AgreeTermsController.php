@@ -5,7 +5,7 @@ namespace Masuresh124\AgreeTerms\Http\Controllers;
 use App\Providers\RouteServiceProvider;
 use Exception;
 use Illuminate\Http\Request;
-use Masuresh124\AgreeTerms\Service\AgreeService;
+use Masuresh124\AgreeTerms\Services\AgreeService;
 
 class AgreeTermsController
 {
