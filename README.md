@@ -14,7 +14,7 @@ Add the following code in config\app.php
   /**
   * Package Service Providers...
   */
-  Masuresh124\SimpleCrudBuilder\Providers\AgreeTermsProvider::class,
+  Masuresh124\AgreeTerms\Providers\AgreeTermsProvider::class,
 ```
 Run the following command to publish the service provider
 ```bash
