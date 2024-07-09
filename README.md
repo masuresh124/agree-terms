@@ -67,7 +67,7 @@ Go To `resources/views/agree-terms/form.blade.php`
 - Add layout to this page as per the application design
 ```javascript
 @include('agree-terms.terms')
-<form action="{{ route('agree-terms.store') }}" method="post">
+<form action="{{ route(config('agree-terms.store_route')) }}" method="post">
     @csrf
     <div class="form-check">
         <input name="is_agreed" type="checkbox" class="form-check-input" id="is_agreed">
