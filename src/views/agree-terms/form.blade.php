@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-lg-6 offset-lg-3">
             @include('agree-terms.terms')
-            <form action="{{ route('agree-terms.store') }}" method="post">
+            <form action="{{ route(config('agree-terms.store_route')) }}" method="post">
                 @csrf
                 <div class="form-check">
                     <input name="is_agreed" type="checkbox" class="form-check-input" id="is_agreed">
