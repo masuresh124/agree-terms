@@ -106,7 +106,7 @@ If the package is already installed and you are trying to update it to the lates
  
 ```bash
   composer require masuresh124/agree-terms
-  php artisan vendor:publish --provider="Masuresh124\AgreeTerms\Providers\AgreeTermsProvider"  --tag="agree-terms" --force
+  php artisan vendor:publish --provider="Masuresh124\AgreeTerms\Providers\AgreeTermsProvider"  --tag="config-agree-terms" --force
 
 ```
 

@@ -28,7 +28,7 @@ class AgreeTermsProvider extends ServiceProvider
         $this->loadMigrationsFrom(__DIR__ . '/../Database/Migrations');
         $this->publishes([
             __DIR__ . '/../../config/agree-terms.php' => config_path('agree-terms.php'),
-        ], 'agree-terms');
+        ], 'config-agree-terms');
         $this->publishes([
             __DIR__ . '/../views' => resource_path('views'),
         ], 'agree-terms');
