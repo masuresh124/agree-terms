@@ -96,6 +96,20 @@ Go To `resources/views/agree-terms/terms.blade.php`
 </div>
 
 ```
+## Updating 
+If the package is already installed and you are trying to update it to the latest version, please follow the instructions below:
+
+ - Take a backup of the existing config file located at app/config/agree-terms.php.
+ - Run the following commands:
+
+ <p><b>Note: The commands below will replace the existing config file with the new one. After that, compare the new config file with your backup and add any missing values as needed.</b></p>
+ 
+```bash
+  composer require masuresh124/agree-terms
+  php artisan vendor:publish --provider="Masuresh124\AgreeTerms\Providers\AgreeTermsProvider"  --tag="agree-terms" --force
+
+```
+
 ## Badges
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
 
