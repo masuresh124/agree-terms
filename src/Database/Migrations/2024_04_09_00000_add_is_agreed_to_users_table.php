@@ -7,7 +7,7 @@ class AddIsAgreedToUsersTable extends Migration
 {
     public function getUserTableName()
     {
-        $user_model = config('auth.providers.users.model', App\User::class);
+        $user_model = config('auth.providers.users.model', \App\Models\User::class);
 
         return (new $user_model)->getTable();
     }

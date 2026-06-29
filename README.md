@@ -9,13 +9,10 @@ Install agree terms component with the composer
 ```bash
  composer require masuresh124/agree-terms
 ```
-Add the following code in config\app.php
-```bash
-  /**
-  * Package Service Providers...
-  */
-  Masuresh124\AgreeTerms\Providers\AgreeTermsProvider::class,
-```
+The service provider is auto-discovered, so no manual registration is required.
+(On Laravel < 5.5, add `Masuresh124\AgreeTerms\Providers\AgreeTermsProvider::class`
+to the `providers` array in `config/app.php`.)
+
 Run the following command to publish the service provider
 ```bash
   php artisan vendor:publish --provider="Masuresh124\AgreeTerms\Providers\AgreeTermsProvider"
@@ -45,14 +42,14 @@ class User extends Authenticatable
 
 }
 ```
-In `app\Http\Kernel.php` add the following middleware 
-```javascript
-     protected $routeMiddleware = [
-        .
-        .
-        'agree-terms'      => \Masuresh124\AgreeTerms\Http\Middleware\AgreeTermsMiddleware::class,
-    ];
-```
+The `agree-terms` middleware alias is registered automatically by the package's
+service provider — you do **not** need to edit `app/Http/Kernel.php`
+(removed in Laravel 11) or `bootstrap/app.php`.
+
+> On Laravel 9 / 10 the alias is still registered for you. If you prefer to
+> register it manually instead, add to the `$middlewareAliases` array in
+> `app/Http/Kernel.php`:
+> `'agree-terms' => \Masuresh124\AgreeTerms\Http\Middleware\AgreeTermsMiddleware::class,`
 
 In `routes/web.php` add the following middleware for routes
 ```javascript

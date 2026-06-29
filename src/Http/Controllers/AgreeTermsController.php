@@ -2,7 +2,6 @@
 
 namespace Masuresh124\AgreeTerms\Http\Controllers;
 
-use App\Providers\RouteServiceProvider;
 use Exception;
 use Illuminate\Http\Request;
 use Masuresh124\AgreeTerms\Services\AgreeService;
@@ -40,7 +39,7 @@ class AgreeTermsController
             return redirect()->to($url);
         }
 
-        return redirect()->to(RouteServiceProvider::HOME);
+        return redirect()->to(config('agree-terms.home', '/'));
     }
 
 }
